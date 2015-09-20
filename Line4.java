@@ -6,12 +6,12 @@ public class Line4 {
     
     void printLength() {
         double length;
-        length = Math.sqrt ( ____ ) ;
+        length = Math.sqrt (Math.pow(points[1].x-points[0].x,2) + Math.pow(points[1].y-points[0].y, 2)) ;
         System.out.println ("Line length is " + length);
     }
     
     void printAngle() {
-        double angleInDegrees = Math.atan2 ( ____ , ____ ) * 180.0 / Math.PI;
+        double angleInDegrees = Math.atan2 ( points[1].y-points[0].y,points[1].x-points[0].x  ) * 180.0 / Math.PI;
         System.out.println ("Angle is " + angleInDegrees + " degrees");
     }
 
@@ -24,6 +24,15 @@ public class Line4 {
 		 * (45, 40). Print the line's length, which should be 50. Print the
 		 * line's angle, which should be around 36.87 degrees.
 		 */
+        Line4 myLine= new Line4();
+        myLine.points= new Point[4];
+        Point p1= new Point(5,10);
+        Point p2= new Point(45,40);
+        myLine.points[0]=p1;
+        myLine.points[1]=p2;
+        myLine.printLength();
+        myLine.printAngle();
+        
     }
 
 }
